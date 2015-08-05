@@ -5,10 +5,10 @@ public class Java1 {
 		// TODO Auto-generated method stub
 int va1=1;
 System .out.println("Hello world!"+va1);
-int str=fun1();
+String str=fun1();
 }
-	public static int fun1(){
+	public static String fun1(){
 		System.out.println("fun1");
-		return 12;
+		return "12";
 	}
 }
