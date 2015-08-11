@@ -16,7 +16,7 @@ public class Java {
 		String E="〡柏";
 		String F="50碢";
 		if(A!=F&&C<=45&&B==D||A!=F&&C<=45&&B==E){
-		System.out.println("琌城穦禦都");
+				System.out.println("琌城穦禦都");
 		}else{
 			System.out.println("ぃ琌城穦禦都");
 		}
