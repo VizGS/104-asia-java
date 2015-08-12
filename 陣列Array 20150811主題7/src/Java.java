@@ -1,5 +1,5 @@
 
-public class Java1 {
+public class Java {
 
 	/**
 	 * @param args
