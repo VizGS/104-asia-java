@@ -1,20 +1,25 @@
 import java.util.Random;
 import java.util.Scanner;
-public class Java {
+public class Java2 {
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
 		Scanner scn=new Scanner(System.in);
 		Random a=new Random();
 		int c=0;
 		int data[]=new int[10];
 		for(int i=0;i<10;i++){
-		int f=(a.nextInt(100)+1);
-		data[i]=f;
+			int f=a.nextInt(100)+1;
+			data[i]=f;
+			 for(int p=0;p<i;p++){
+					if(data[p]==data[i]){
+						i--;
+						break;
+					}
+				}
 		if( f%2==0){
 			c++;
 		}

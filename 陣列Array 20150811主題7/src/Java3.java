@@ -1,6 +1,6 @@
 import java.util.Random;
 import java.util.Scanner;
-public class Java {
+public class Java3 {
 
 	/**
 	 * @param args
@@ -13,8 +13,14 @@ public class Java {
 		int c=0;
 		int data[]=new int[10];
 		for(int i=0;i<10;i++){
-		int f=(a.nextInt(100)+1);
-		data[i]=f;
+			int f=a.nextInt(100)+1;
+			data[i]=f;
+			 for(int p=0;p<i;p++){
+					if(data[p]==data[i]){
+						i--;
+						break;
+					}
+				}
 		if( f%2==0){
 			c++;
 		}
@@ -40,11 +46,21 @@ public class Java {
 			System.out.println("已猜錯3次,你輸了!");
 			System.out.println("共有"+c+"個偶數");
 		}
+		System.out.print("數字由小到大是   ");
 		for(int k=0;k<10;k++){
-		System.out.print(data[k]+" ");
+			for(int m=k;m<10;m++){
+				if(data[k]>data[m]){
+					int n=data[k];
+					data[k]=data[m];
+					data[m]=n;
+				}
+				
+			}
+		System.out.print(data[k]+"  ");
 		}
 	}
 
 		
 
 }
+
