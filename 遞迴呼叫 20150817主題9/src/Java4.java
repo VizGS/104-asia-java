@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class Java3 {
+public class Java4 {
 
 	/**
 	 * @param args
@@ -8,25 +8,24 @@ public class Java3 {
 		// TODO Auto-generated method stub
 
 		Scanner scn=new Scanner(System.in);
-		System.out.println("叫块2计");
+		System.out.println("叫块x,y");
 		int a=scn.nextInt();
 		int b=scn.nextInt();
-		System.out.println(gcd(a,b));
-		
-	}
-	public static int gcd(int a , int b){
 		if(b>a){
 			int c=a;
 			a=b;
 			b=c;
 		}
-		while (a % b != 0){ 
-			int c=a%b;
-			a=b;
-			b=c;
-		}
-		return b; 
-		
+		System.out.println("ㄢ计ぇ程そ计"+fuck(a,b));
 	}
 
+	public static int fuck(int a,int b){
+		if(a%b==0){
+			return b;
+		}else{
+			int c=a%b;
+			return fuck( a=b, b=c);
+		}	
+		
+	}
 }

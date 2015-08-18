@@ -13,7 +13,7 @@ public class Java5 {
 		int e=0;
 		int data[]=new int[20];
 		for(int i=0;i<20;i++){
-			int b=a.nextInt(20)-10;
+			int b=a.nextInt(21)-10;
 			data[i]=b;
 			if(b<0){
 				c++;

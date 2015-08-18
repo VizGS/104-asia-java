@@ -10,25 +10,25 @@ public class Java5 {
 		Scanner scn=new Scanner(System.in);
 		System.out.println("請輸入x值");
 		int a=scn.nextInt();
-		if(a<-1){
-		System.out.println(java(a));		
+		if(a<(-1)){
+		System.out.println("y值為"+java(a));		
 	}else{
-		if(-1<=a&&a<=1){
-			System.out.println(java(a));
+		if((-1)<=a&&a<=1){
+			System.out.println("y值為"+java1(a));
 		}else{
-			System.out.println(java(a));
+			System.out.println("y值為"+java2(a));
 		}
 	}
 
 	}
 	
 	public static int java(int a){
-		int y=3*(a^2);
+		int y=(int) (3*Math.pow(a, 2));
 		return y;
 	}
 	
 	public static int java1(int b){
-		int y=(b)^3+3*(b)-3;
+		int y=(int)Math.pow(b, 3)+3*(b)-3;
 		return y;
 	}
 	public static int java2(int c){
