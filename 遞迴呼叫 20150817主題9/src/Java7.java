@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class Java6 {
+public class Java7 {
 
 	/**
 	 * @param args
@@ -8,15 +8,16 @@ public class Java6 {
 		// TODO Auto-generated method stub
 
 		Scanner scn=new Scanner(System.in);
-		System.out.println("請輸入x,y的值");
+		System.out.println("請輸入x,y,z的值");
 		int a=scn.nextInt();
 		int b=scn.nextInt();
+		int d=scn.nextInt();
 		if(b>a){
 			int c=a;
 			a=b;
 			b=c;
 		}
-		System.out.println((a/fuck(a,b))*(b/fuck(a,b))*fuck(a,b));
+		System.out.println((a/fuck(d,fuck(a,b)))*(b/fuck(d,fuck(a,b)))*(d/fuck(d,fuck(a,b)))*fuck(d,fuck(a,b)));
 	}
 
 	public static int fuck(int a,int b){
