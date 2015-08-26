@@ -12,9 +12,9 @@ public class Java3 extends JFrame {
 	private Container ass;
 	private static long num;
 	private static byte op;
-	private static int x;
 	private static JButton ab[] = new JButton[20];
 	private static JButton ab2[] = new JButton[15];
+	private static boolean dot = false;
 	// Button
 	String str[] = { "←", "√", "C", "±", "7", "8", "9", "×", "4", "5", "6",
 			"÷", "1", "2", "3", "-", "0", ".", "=", "+" };
@@ -27,6 +27,7 @@ public class Java3 extends JFrame {
 
 	private void yourmother() {
 
+		// 視窗設定
 		ass = this.getContentPane();
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setBounds(450, 250, 600, 400);
@@ -48,15 +49,15 @@ public class Java3 extends JFrame {
 		Fuckyou.add(Fuckyou3);
 		// Fcukyou2_JButton的設定
 		for (int k = 0; k < 15; k++) {
-			ab[k] = new JButton(str2[k]);
-			ab[k].setOpaque(true);
-			ab[k].setHorizontalAlignment(JButton.CENTER);
-			ab[k].setFont(new Font("Times New Roman", Font.BOLD, 28));
-			ab[k].setBackground(Color.WHITE);
-			Fuckyou2.add(ab[k]);
+			ab2[k] = new JButton(str2[k]);
+			ab2[k].setOpaque(true);
+			ab2[k].setHorizontalAlignment(JButton.CENTER);
+			ab2[k].setFont(new Font("Times New Roman", Font.BOLD, 28));
+			ab2[k].setBackground(Color.WHITE);
+			Fuckyou2.add(ab2[k]);
 		}
-		ab[0].addActionListener(new Java4());
-		ab[1].addActionListener(new Java4());
+		ab2[1].addActionListener(new Java4());
+		ab2[2].addActionListener(new Java4());
 		// Fuckyou3_JButton的設定
 		for (int i = 0; i < 20; i++) {
 			ab[i] = new JButton(str[i]);
@@ -65,119 +66,136 @@ public class Java3 extends JFrame {
 			ab[i].setFont(new Font("Times New Roman", Font.BOLD, 28));
 			Fuckyou3.add(ab[i]);
 		}
-		//
-		if(x==1){
-
+		// Fuckyou3_JButton放入Java4
+		for (int j = 4; j < 20; j++) {
+			ab[j].addActionListener(new Java4());
 		}
-		//CN的歸零
+		// 小數點設定
+		ab[17].addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ae) {
+				String str = Fuck.getText();
+				int len = str.length();
+				if (dot) {
+					Fuck.setText(str.substring(0, len - 1));
+				}
+				dot = true;
+			}
+		});
+		// CN的歸零
 		ab[2].addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
 				Fuck.setText("0");
+				dot = false;
 			}
 		});
-		//刪除倒退鍵
+		// 刪除倒退鍵
 		ab[0].addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
-				String str=Fuck.getText();
-				String str2=str.substring(0,str.length()-1);
-				str=str2;
+				String str = Fuck.getText();
+				String str2 = str.substring(0, str.length() - 1);
+				str = str2;
 				Fuck.setText(str);
-				if(Fuck.getText().equals("")){
-					Fuck.setText("0");	
+				if (Fuck.getText().equals("")) {
+					Fuck.setText("0");
 				}
 			}
 		});
-		//數字的正負
+		// 數字的正負
 		ab[3].addActionListener(new ActionListener() {
-			int a=0;
+			int a = 0;
+
 			public void actionPerformed(ActionEvent ae) {
-				if(Fuck.getText().equals("0")){
-					a=2;
+				if (Fuck.getText().equals("0")) {
+					a = 2;
 				}
-				switch(a){
+				switch (a) {
 				case 0:
-					String str3=(char)45+Fuck.getText();
+					String str3 = (char) 45 + Fuck.getText();
 					Fuck.setText(str3);
 					a++;
 					break;
 				case 1:
-					String str=Fuck.getText();
-					String str2=str.substring(1,str.length());
-					str=str2;
+					String str = Fuck.getText();
+					String str2 = str.substring(1, str.length());
+					str = str2;
 					Fuck.setText(str);
 					a--;
 					break;
 				case 2:
 					Fuck.setText("0");
-					a=0;
+					a = 0;
 					break;
 				}
 			}
 		});
-		//	    
-		for (int j = 4; j < 7; j++) {
-			ab[j].addActionListener(new Java4());
-		}
-		for (int m = 8; m < 11; m++) {
-			ab[m].addActionListener(new Java4());
-		}
-		for (int n = 12; n < 15; n++) {
-			ab[n].addActionListener(new Java4());
-		}
-		ab[16].addActionListener(new Java4());
-		ab[17].addActionListener(new Java4());
 	}
 
 	public static class Java4 implements ActionListener {
 		public void actionPerformed(ActionEvent ae) {
 			JButton asshole = (JButton) ae.getSource();
-			if(Fuck.getText().equals("0")&&asshole.getText()!="."){
+			if (asshole.getText().equals("+") || asshole.getText().equals("-")
+					|| asshole.getText().equals("×")
+					|| asshole.getText().equals("÷")) {
+				Fuck.setText(Fuck.getText());
+			} else if (Fuck.getText().equals("0") && asshole.getText() != ".") {
 				Fuck.setText("");
 				Fuck.setText(Fuck.getText() + asshole.getText());
-			}else{
+			} else {
 				Fuck.setText(Fuck.getText() + asshole.getText());
 			}
 
-//			String mustSplitString=Fuck.getText();
-//			String[] AfterSplit = mustSplitString.split("+ - × ÷");
-//			
-//			
-//			long abc;
+			// String mustSplitString=Fuck.getText();
+			// String[] AfterSplit = mustSplitString.split("+ - × ÷");
+			long abc = 0;
 
+			if (asshole.getText().equals("+")) {
+				abc = Long.parseLong(Fuck.getText());
+				op = 1;
+				Fuck.setText(Fuck.getText());
+				
+//				Fuck.setText("");
+//				Fuck.setText(Fuck.getText() + asshole.getText());
+			} 
+			if (asshole == ab[15]) {
+				abc = Long.parseLong(Fuck.getText());
+				Fuck.setText(Fuck.getText());
+				op = 2;
+			}  
+			if (asshole == ab[11]) {
+				abc = Long.parseLong(Fuck.getText());
+				Fuck.setText(Fuck.getText());
+				op = 3;
+			} 
+			if (asshole == ab[7]) {
+				abc = Long.parseLong(Fuck.getText());
+				Fuck.setText(Fuck.getText());
+				op = 4;
+			} 
+			Fuck.setText("");
+			Fuck.setText(Fuck.getText() + asshole.getText());
+			if (asshole == ab[18]) {
+				num = Integer.parseInt(Fuck.getText());
+				switch (op) {
 
-//			if (asshole == ab[19]) {
-//				op = 1;
-//			} else if (asshole == ab[15]) {
-//				op = 2;
-//			} else if (asshole == ab[11]) {
-//				op = 3;
-//			} else if (asshole == ab[7]) {
-//				op = 4;
-//			} else {
-//				if (asshole == ab[18]) {
-//					abc = Long.parseLong(Fuck.getText());
-//
-//					switch (op) {
-//
-//					case 1:
-//						num += abc;
-//						break;
-//					case 2:
-//						num -= abc;
-//						break;
-//					case 3:
-//						num *= abc;
-//						break;
-//					case 4:
-//						num /= abc;
-//						break;
-//					default:
-//						num = 0;
-//					}
-//					Fuck.setText(Long.toString(num));
-//				}
-//			}
+				case 1:
+					num += abc;
+					break;
+				case 2:
+					num -= abc;
+					break;
+				case 3:
+					num *= abc;
+					break;
+				case 4:
+					num /= abc;
+					break;
+				default:
+					num = 0;
+				}
+				Fuck.setText(Long.toString(num));
+			}
 		}
+
 	}
 
 }
