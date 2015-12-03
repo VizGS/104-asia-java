@@ -9,7 +9,7 @@ public class Java3 {
 		int password = 6505;
 		System.out.println("請輸入密碼(四位整數)");
 		int a = scn.nextInt();
-		int b = 0, c = 0;
+		int b = 0;
 		while (b != 2) {
 			if (a == password) {
 				b = 2;
