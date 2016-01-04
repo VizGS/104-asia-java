@@ -8,7 +8,7 @@ public class Java2 {
 		// TODO Auto-generated method stub
 
 		Random ran=new Random();
-		int a=ran.nextInt(1001)+1;
+		int a=ran.nextInt(1000)+1;
 		System.out.println("亂數產生的產品價格為"+a+"元");
 		fuck(a);
 	}
