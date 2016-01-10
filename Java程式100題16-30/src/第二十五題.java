@@ -6,9 +6,8 @@ public class 第二十五題 {
 		// TODO Auto-generated method stub
 
 		Scanner scn = new Scanner(System.in);
-		System.out.println("請輸入三角形的三邊長");
 		int a = scn.nextInt();
-		int b = scn.nextInt();
+    	int b = scn.nextInt();
 		int c = scn.nextInt();
 		if (a > b && a > c) {
 			int d = a;
@@ -21,14 +20,12 @@ public class 第二十五題 {
 		}
 		if (a + b > c) {
 			if (a * a + b * b < c * c) {
-				System.out.println("此三角形為鈍角三角形");
+				System.out.println("Obtuse triangle");
 			} else if (a * a + b * b == c * c) {
-				System.out.println("此三角形為直角三角形");
+				System.out.println("Right triangle");
 			} else if (a * a + b * b > c * c) {
-				System.out.println("此三角形為銳角三角形");
+				System.out.println("Acute triangle");
 			}
-		} else {
-			System.out.println("此非合法三角形");
 		}
 	}
 

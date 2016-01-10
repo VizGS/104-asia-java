@@ -7,12 +7,12 @@ public class 第十三題 {
 
 		Scanner scn = new Scanner(System.in);
 		System.out.println("請輸入邊長和字元");
-		int n = scn.nextInt();
 		char c = scn.next().charAt(0);
-		square(n, c);
+        int n = scn.nextInt();
+		square(c, n);
 	}
 
-	public static void square(int n, char c) {
+	public static void square(char c,int n) {
 
 		for (int i = 0; i < n; i++) {
 			for (int j = 0; j < n; j++) {

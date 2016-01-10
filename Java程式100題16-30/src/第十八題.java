@@ -18,16 +18,19 @@ public class 第十八題 {
 	}
 
 	public static void C(int a, int b) {
-		int sum = 1, sum2 = 1, sum3 = 1;
-		for (int i = 1; i <= a; i++) {
-			sum *= i;
+		int sum = 1, sum2 = 1;
+		int x = 0;
+		for (int j = 1; j <= b; j++) {
+			sum2 *= j;
 		}
-		for (int i = 1; i <= b; i++) {
-			sum2 *= i;
+		for (int i = a;;) {
+			while (x != (a - (a - b))) {
+				sum *= i;
+				i--;
+				x++;
+			}
+			break;
 		}
-		for (int i = 1; i <= (a - b); i++) {
-			sum3 *= i;
-		}
-		System.out.println("C(m,n)=" + sum / (sum2 * sum3));
+		System.out.println("C(m,n)=" + (sum / sum2));
 	}
 }
