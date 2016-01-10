@@ -13,7 +13,7 @@ public class 第三十九題 {
 			System.out.println("使用者輸入錯誤");
 		} else {
 			for (int i = 1; i <= n; i++) {
-				a += (double) 1 / ((2 * n - 1) * (2 * n));
+				a += (double) 1 / ((2 * i - 1) * (2 * i));
 			}
 			System.out.println("運算結果為" + a);
 		}
