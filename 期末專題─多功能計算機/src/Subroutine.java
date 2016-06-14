@@ -3,7 +3,7 @@ import java.awt.event.*;
 
 import javax.swing.*;
 
-public class Java3 extends JFrame {
+public class Subroutine extends JFrame {
 
 	private static JTextField JTF = new JTextField("0");
 	private JPanel Jpanel1 = new JPanel();
@@ -23,7 +23,7 @@ public class Java3 extends JFrame {
 			"+" };
 	String str2[] = { "sinh", "sin", "cos", "cosh", "tan", "cot", "tanh", "sec", "csc", "x³", "log", "x²" };
 
-	public Java3() {
+	public Subroutine() {
 		MainMethod();
 	}
 
